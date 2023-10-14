@@ -11,13 +11,14 @@ const { AirplaneService } = require("../services");
 async function createAirplane(req, res) {
   try {
     const airplane = await AirplaneService.createAirplane({
-      moduleNumber: req.body.moduleNumber,
+      modelNumber: req.body.modelNumber,
       capacity: req.body.capacity,
     });
+
     return res.status(StatusCodes.CREATED).json({
       success: true,
       message: "Successfully create an airplane",
-      data: response,
+      data: airplane,
       error: {},
     });
   } catch (error) {
