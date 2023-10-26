@@ -1,7 +1,5 @@
 "use strict";
 
-const { QueryInterface } = require("sequelize");
-
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
@@ -13,7 +11,6 @@ module.exports = {
         table: "Cities",
         field: "id",
       },
-      onUpdate: "CASCADE",
       onDelete: "CASCADE",
     });
   },
