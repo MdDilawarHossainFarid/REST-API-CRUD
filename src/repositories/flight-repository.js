@@ -3,6 +3,7 @@ const { Sequelize } = require("sequelize");
 const CrudRepository = require("./crud-repository");
 const { Flight, Airplane, Airport, City } = require("../models");
 const db = require("../models");
+const { addRowLockOnFlights } = require("./queries");
 
 class FlightRepository extends CrudRepository {
   constructor() {
